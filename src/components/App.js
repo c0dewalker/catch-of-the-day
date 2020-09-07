@@ -15,7 +15,7 @@ class App extends React.Component {
   componentDidMount() {
     const localStorageRef = localStorage.getItem(this.props.match.params.storeId)
     if (localStorageRef)
-      this.setState({ order : JSON.parse(localStorageRef) })
+      this.setState({order: JSON.parse(localStorageRef)})
     this.ref = base.syncState(`${this.props.match.params.storeId}/fishes`, {
       context: this,
       state: 'fishes'
@@ -60,7 +60,11 @@ class App extends React.Component {
           </ul>
         </div>
         <Order order={this.state.order} fishes={this.state.fishes}/>
-        <Inventory addFish={this.addFish} loadSampleFishes={this.loadSampleFishes}/>
+        <Inventory
+          addFish={this.addFish}
+          loadSampleFishes={this.loadSampleFishes}
+          fishes={this.state.fishes}
+        />
       </div>
     )
   }
