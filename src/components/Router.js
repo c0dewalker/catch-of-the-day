@@ -1,8 +1,8 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from "react-router-dom"
-import StorePicker from './StorePicker'
-import App from './App'
-import NotFound from "./NotFound"
+import StorePicker from './StorePicker/StorePicker'
+import App from './App/App'
+import NotFound from "./NotFound/NotFound"
 
 const Router = () => (
  <BrowserRouter>
