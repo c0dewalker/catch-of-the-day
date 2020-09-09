@@ -42,9 +42,9 @@ const Order = ({order, fishes, removeFromOrder}) => {
 }
 
 Order.propTypes = {
-  order: PropTypes.object,
-  fishes: PropTypes.object,
-  removeFromOrder: PropTypes.func
+  order: PropTypes.object.isRequired,
+  fishes: PropTypes.object.isRequired,
+  removeFromOrder: PropTypes.func.isRequired
 }
 
 export default Order

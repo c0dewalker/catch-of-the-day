@@ -20,13 +20,13 @@ const Fish = (props) => {
 }
 
 Fish.propTypes = {
-  addToOrder: PropTypes.func,
+  addToOrder: PropTypes.func.isRequired,
   details: PropTypes.shape({
-  desc: PropTypes.string,
-  image: PropTypes.string,
-  status: PropTypes.string,
-  price: PropTypes.number
-  })
+    desc: PropTypes.string,
+    image: PropTypes.string,
+    status: PropTypes.string,
+    price: PropTypes.number
+  }).isRequired
 }
 
 export default Fish
