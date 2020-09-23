@@ -1,26 +1,30 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {TransitionGroup, CSSTransition} from 'react-transition-group'
-import {formatPrice} from '../../../helpers'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { formatPrice } from '../../../helpers'
 
-const Order = ({order, fishes, removeFromOrder}) => {
-
-  const renderOrder = key => {
+const Order = ({ order, fishes, removeFromOrder }) => {
+  const renderOrder = (key) => {
     const fish = fishes[key]
     if (!fish) return null
     const count = order[key]
     const isAvailable = fish.status === 'available'
     if (!isAvailable)
       return (
-        <CSSTransition classNames="order" key={key} timeout={{enter: 250, exit: 250}}>
-          <li>
-            Sorry {fish ? fish.name : 'fish'} is no longer available
-          </li>
+        <CSSTransition
+          classNames="order"
+          key={key}
+          timeout={{ enter: 250, exit: 250 }}
+        >
+          <li>Sorry {fish ? fish.name : 'fish'} is no longer available</li>
         </CSSTransition>
-
       )
     return (
-      <CSSTransition classNames="order" key={key} timeout={{enter: 250, exit: 250}}>
+      <CSSTransition
+        classNames="order"
+        key={key}
+        timeout={{ enter: 250, exit: 250 }}
+      >
         <li>
           {count} kg {fish.name}
           <button onClick={() => removeFromOrder(key)}>&times;</button>
@@ -44,7 +48,9 @@ const Order = ({order, fishes, removeFromOrder}) => {
       <TransitionGroup component="ul" className="order">
         {orderKeys.map(renderOrder)}
       </TransitionGroup>
-      <div className="total">Total:&nbsp;<strong>{formatPrice(total)}</strong></div>
+      <div className="total">
+        Total:&nbsp;<strong>{formatPrice(total)}</strong>
+      </div>
     </div>
   )
 }
@@ -52,7 +58,7 @@ const Order = ({order, fishes, removeFromOrder}) => {
 Order.propTypes = {
   order: PropTypes.object.isRequired,
   fishes: PropTypes.object.isRequired,
-  removeFromOrder: PropTypes.func.isRequired
+  removeFromOrder: PropTypes.func.isRequired,
 }
 
 export default Order

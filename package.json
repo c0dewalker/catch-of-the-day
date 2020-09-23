@@ -8,18 +8,17 @@
   },
   "dependencies": {
     "autoprefixer-stylus": "0.14.0",
-    "firebase": "^7.19.1",
+    "firebase": "^7.21.0",
     "prop-types": "^15.6.0",
     "re-base": "4.0.0",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.2.1",
     "serve": "^10.1.1",
     "stylus": "0.54.5"
   },
   "scripts": {
-    "dev": "react-scripts start",
     "start": "react-scripts start",
     "watch": "concurrently --names \"webpack, stylus\" --prefix name \"npm run start\" \"npm run styles:watch\"",
     "build": "react-scripts build",
